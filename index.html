@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen VJ - Pharmacovigilance Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0a4a6e;
+            --secondary-blue: #1c6ea4;
+            --accent-blue: #4a9bd8;
+            --light-blue: #e8f4ff;
+            --dark-blue: #052f4e;
+            --text-dark: #2c3e50;
+            --text-light: #5d7a9c;
+            --white: #ffffff;
+            --gray-light: #f5f9ff;
+            --shadow: 0 10px 30px rgba(10, 74, 110, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--gray-light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Parallax Background Elements */
+        .parallax-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .bg-element {
+            position: absolute;
+            background: rgba(74, 155, 216, 0.05);
+            border-radius: 50%;
+        }
+        
+        .bg-element-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(74, 155, 216, 0.08) 0%, rgba(74, 155, 216, 0) 70%);
+        }
+        
+        .bg-element-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(28, 110, 164, 0.06) 0%, rgba(28, 110, 164, 0) 70%);
+        }
+        
+        .bg-element-3 {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(10, 74, 110, 0.04) 0%, rgba(10, 74, 110, 0) 70%);
+        }
+        
+        /* Parallax Sections */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 74, 110, 0.85) 0%, rgba(28, 110, 164, 0.75) 100%);
+            z-index: 1;
+        }
+        
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Header with New Layout */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            padding: 40px 20px;
+        }
+        
+        .header-content {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .profile-section {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .info-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            background-color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+        }
+        
+        .profile-img-placeholder i {
+            font-size: 5rem;
+            color: white;
+        }
+        
+        .photo-upload-label {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo-upload-label:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        #photo-upload {
+            display: none;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: var(--light-blue);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .contact-info-right {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-blue);
+            margin-top: 30px;
+            float: right;
+            clear: both;
+            max-width: 400px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            width: 30px;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        .section-title h3:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--secondary-blue));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border-left: 5px solid var(--accent-blue);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(10, 74, 110, 0.15);
+        }
+        
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--secondary-blue));
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .skill-item {
+            background: linear-gradient(135deg, var(--light-blue), #d4e8ff);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(10, 74, 110, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(74, 155, 216, 0.2);
+        }
+        
+        .skill-item:hover {
+            background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(74, 155, 216, 0.3);
+        }
+        
+        /* Timeline for Experience and Education */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--secondary-blue));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: calc(50% + 40px);
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: calc(50% + 40px);
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            position: relative;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            transform: rotate(45deg);
+            top: 25px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -10px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 5px solid var(--white);
+            box-shadow: 0 0 0 4px var(--accent-blue);
+            z-index: 2;
+        }
+        
+        .job-title {
+            color: var(--secondary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        
+        .company, .institution {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .date {
+            background: linear-gradient(135deg, var(--light-blue), #d4e8ff);
+            color: var(--primary-blue);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        /* Projects */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Languages & Interests */
+        .languages-interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .language-item, .interest-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(74, 155, 216, 0.3);
+        }
+        
+        .language-name, .interest-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            color: var(--secondary-blue);
+            font-weight: 600;
+            background: var(--light-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .cert-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--white), var(--light-blue));
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(10, 74, 110, 0.15);
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Connect Section */
+        .connect-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(74, 155, 216, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(74, 155, 216, 0.4);
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+        
+        .scroll-indicator i {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .contact-info-right {
+                float: none;
+                margin: 30px auto 0;
+            }
+            
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-marker {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -10px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 30px 20px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .section-title h3 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background Elements -->
+    <div class="parallax-bg">
+        <div class="bg-element bg-element-1 floating" style="animation-delay: 0s;"></div>
+        <div class="bg-element bg-element-2 floating" style="animation-delay: 1s;"></div>
+        <div class="bg-element bg-element-3 floating" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <!-- Header with Parallax -->
+    <header class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="parallax-overlay"></div>
+        <div class="container">
+            <div class="header-content parallax-content">
+                <div class="profile-section">
+                    <div class="profile-img">
+                        <div class="profile-img-placeholder" id="photo-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <!-- Photo will be displayed here after upload -->
+                        <img id="uploaded-photo" style="display: none;" alt="Profile Photo">
+                        <label for="photo-upload" class="photo-upload-label" title="Upload Photo">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                        <img src="piv.jpeg" alt="Naveen VJ Photo" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h1>Naveen VJ</h1>
+                    <h2>Bachelor of Pharmacy | Pharmacovigilance Professional</h2>
+                    <p class="tagline">A dedicated and detail-oriented pharmacy professional with expertise in drug safety, pharmacovigilance processes, and quality management systems. Committed to enhancing patient safety through data-driven insights and regulatory compliance.</p>
+                    
+                    <!-- Contact Info aligned to the right -->
+                    <div class="contact-info-right">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>naveenjanakiraman2002@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Chengalpattu, TamilNadu, India – 603001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>B.Pharmacy (SRM University)</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Available upon request</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+    
+    <!-- Professional Summary -->
+    <section id="summary">
+        <div class="container">
+            <div class="section-title">
+                <h3>Professional Summary</h3>
+            </div>
+            <div class="card">
+                <p>A dedicated and detail-oriented Bachelor of Pharmacy graduate with over 2 years of professional experience as a Senior Hospital Pharmacist. Possesses strong analytical, communication, and clinical skills, trained in drug safety, pharmacovigilance processes, and quality management systems. Enthusiastic about leveraging data-driven insights in bioinformatics, cheminformatics, and clinical research to enhance patient safety and regulatory compliance in the pharmaceutical industry.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills -->
+    <section id="skills" class="parallax-section" style="background-color: var(--light-blue);">
+        <div class="container">
+            <div class="section-title">
+                <h3>Skills & Expertise</h3>
+            </div>
+            <div class="skills-container">
+                <div class="skill-item">Pharmacovigilance (PV)</div>
+                <div class="skill-item">Post Marketing Surveillance (PMS)</div>
+                <div class="skill-item">Adverse Event / SAE Reporting</div>
+                <div class="skill-item">ICSR Processing</div>
+                <div class="skill-item">MedDRA & WHO Drug Coding</div>
+                <div class="skill-item">PSUR, PBRER, DSUR</div>
+                <div class="skill-item">Literature Screening & Review</div>
+                <div class="skill-item">Good Pharmacovigilance Practices</div>
+                <div class="skill-item">Argus, ARISg, Veeva Vault</div>
+                <div class="skill-item">Oracle Clinical</div>
+                <div class="skill-item">Microsoft Excel / Power BI</div>
+                <div class="skill-item">Signal Tracking Tools</div>
+                <div class="skill-item">Regulatory Submission Portals</div>
+                <div class="skill-item">Data Integrity & Accuracy</div>
+                <div class="skill-item">Root Cause Analysis (RCA)</div>
+                <div class="skill-item">Cross-Functional Collaboration</div>
+                <div class="skill-item">Problem Solving</div>
+                <div class="skill-item">Critical Thinking</div>
+                <div class="skill-item">Attention to Detail</div>
+                <div class="skill-item">Time Management</div>
+                <div class="skill-item">Case Intake & Triage</div>
+                <div class="skill-item">Case Validity Assessment</div>
+                <div class="skill-item">Narrative Writing & Medical Coding</div>
+                <div class="skill-item">Seriousness & Expectedness Assessment</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h3>Professional Experience</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">Senior Hospital Pharmacist</h4>
+                        <span class="company">CFC Multi Speciality Hospital, Chennai, India</span>
+                        <span class="date">November 2023 – November 2025</span>
+                        <ul>
+                            <li>Managed inpatient and outpatient pharmacy operations, including dispensing, inventory management, and prescription verification.</li>
+                            <li>Monitored drug usage, ensured compliance with hospital policies and regulatory guidelines, and minimized medication errors.</li>
+                            <li>Conducted patient counseling on medication adherence, side effects, and potential drug interactions.</li>
+                            <li>Trained and supervised junior pharmacy staff, promoting quality control and Good Documentation Practice (GDP).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">Intern</h4>
+                        <span class="company">Solara Active Pharma Sciences Limited, Chennai, India</span>
+                        <span class="date">June 2022 (15) – June 2022 (24)</span>
+                        <ul>
+                            <li>Gained hands-on exposure to pharmaceutical manufacturing, QA audits, and batch documentation processes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects -->
+    <section id="projects" class="parallax-section" style="background-color: var(--light-blue);">
+        <div class="container">
+            <div class="section-title">
+                <h3>Projects</h3>
+            </div>
+            <div class="card project-card">
+                <div class="project-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="job-title">Evaluation of Knowledge, Attitude, and Practice of Community Pharmacists about Unused and Expired Drug Disposal – A Cross Sectional Survey</h4>
+                <ul>
+                    <li>Conducted survey-based research assessing pharmacist awareness of environmental safety in drug disposal.</li>
+                    <li>Applied statistical analysis to interpret community health practices and policy implications.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h3>Education</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">Bachelor of Pharmacy (B.Pharm)</h4>
+                        <span class="institution">SRM University, Chennai</span>
+                        <span class="date">2019 – 2023 | CGPA: 7.36</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">12th Standard (State Board)</h4>
+                        <span class="institution">Little Jacky Matriculation Hr. Sec. School, Chengalpattu</span>
+                        <span class="date">2018 – 2019 | Percentage: 65%</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4 class="job-title">10th Standard (State Board)</h4>
+                        <span class="institution">Little Jacky Matriculation Hr. Sec. School, Chengalpattu</span>
+                        <span class="date">2016 – 2017 | Percentage: 82.4%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications -->
+    <section id="certifications" class="parallax-section" style="background-color: var(--light-blue);">
+        <div class="container">
+            <div class="section-title">
+                <h3>Certifications</h3>
+            </div>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h4 class="job-title">HPLC Instrumentation and Applications</h4>
+                    <span class="date">September 2021</span>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h4 class="job-title">Research on Zebrafish Model in Drug Discovery</h4>
+                    <span class="date">October 2021</span>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <h4 class="job-title">Pharmacovigilance and Regulatory Affairs</h4>
+                    <span class="institution">Udemy</span>
+                    <span class="date">2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Languages & Interests -->
+    <section id="languages-interests">
+        <div class="container">
+            <div class="section-title">
+                <h3>Languages & Interests</h3>
+            </div>
+            <div class="languages-interests">
+                <div class="card">
+                    <h4 class="job-title" style="margin-bottom: 20px;">Languages</h4>
+                    <div class="language-item">
+                        <span class="language-name">Tamil</span>
+                        <span class="language-level">Advanced</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Advanced</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Hindi</span>
+                        <span class="language-level">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4 class="job-title" style="margin-bottom: 20px;">Professional Interests</h4>
+                    <div class="interest-item">
+                        <span class="interest-name">Case Processing & Management</span>
+                        <i class="fas fa-clipboard-check" style="color: var(--accent-blue);"></i>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-name">Drug Safety & Pharmacovigilance</span>
+                        <i class="fas fa-shield-alt" style="color: var(--accent-blue);"></i>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-name">Clinical Research & Data Analysis</span>
+                        <i class="fas fa-chart-bar" style="color: var(--accent-blue);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Connect -->
+    <section id="connect" class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="parallax-overlay"></div>
+        <div class="container">
+            <div class="section-title parallax-content">
+                <h3 style="color: white;">Let's Connect</h3>
+            </div>
+            <div class="connect-buttons parallax-content">
+                <a href="https://www.linkedin.com/in/naveen-vi-959563277" class="btn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+                <a href="mailto:naveenjanakiraman2002@gmail.com" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Email</span>
+                </a>
+                <a href="#summary" class="btn btn-outline">
+                    <i class="fas fa-file-download"></i>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Naveen VJ</div>
+                <p class="footer-tagline">Dedicated to enhancing patient safety and regulatory compliance in the pharmaceutical industry through expertise in pharmacovigilance and drug safety management.</p>
+                
+                <div class="connect-buttons">
+                    <a href="https://www.linkedin.com/in/naveen-vj-959563277/" class="btn" target="_blank" style="background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);">
+                        <i class="fab fa-linkedin"></i>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Naveen VJ. All rights reserved.</p>
+                    <p>Pharmacovigilance Professional Portfolio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Parallax Effects and Photo Upload -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect for background elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxBg = document.querySelector('.parallax-bg');
+                const bgElements = document.querySelectorAll('.bg-element');
+                
+                // Move background elements at different speeds
+                if (parallaxBg) {
+                    bgElements.forEach((element, index) => {
+                        let speed = 0.3 + (index * 0.1);
+                        element.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                }
+                
+                // Fade in elements on scroll
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.75) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Initialize sections with fade-in effect
+            const sections = document.querySelectorAll('section:not(header)');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Animate skill items on hover
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.05)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add floating effect to some elements
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Photo upload functionality
+            const photoUpload = document.getElementById('photo-upload');
+            const uploadedPhoto = document.getElementById('uploaded-photo');
+            const photoPlaceholder = document.getElementById('photo-placeholder');
+            
+            photoUpload.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        uploadedPhoto.src = e.target.result;
+                        uploadedPhoto.style.display = 'block';
+                        photoPlaceholder.style.display = 'none';
+                    }
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
